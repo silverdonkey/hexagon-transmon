@@ -13,7 +13,13 @@ import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
 
-
+/**
+ * A UseCase usually does these things:
+ * 1. Takes the input model. => {@link SendMoneyCommand}
+ * 2. Validate the business rules. => checkThreshold method
+ * 3. Manipulate the domain model state. => business logic
+ * 4. Return the output. => true or false
+ */
 @RequiredArgsConstructor
 @Transactional
 @UseCase
@@ -25,12 +31,11 @@ public class MoneySender implements SendMoneyUseCase {
 
     @Override
     public boolean sendMoney(SendMoneyCommand command) {
-        // TODO: validate business rules
-        // TODO: manipulate Account-model state
-        // TODO: return output
 
+        // validate business rules
         checkThreshold(command);
 
+        // manipulate Account-model state
         LocalDateTime baselineDate = LocalDateTime.now().minusDays(10);
 
         Account sourceAccount = loadAccountPort.loadAccount(
@@ -64,6 +69,8 @@ public class MoneySender implements SendMoneyUseCase {
 
         accountLock.releaseAccount(sourceAccountId);
         accountLock.releaseAccount(targetAccountId);
+
+        // return output
         return true;
     }
 
