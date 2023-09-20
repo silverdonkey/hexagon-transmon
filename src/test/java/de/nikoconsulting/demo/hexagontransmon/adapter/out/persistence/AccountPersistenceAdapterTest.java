@@ -6,9 +6,8 @@ import de.nikoconsulting.demo.hexagontransmon.app.domain.model.Money;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.context.annotation.Import;
-import org.springframework.test.context.DynamicPropertyRegistry;
-import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
 import org.testcontainers.containers.PostgreSQLContainer;
@@ -52,16 +51,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 class AccountPersistenceAdapterTest {
 
     @Container
+    @ServiceConnection
     static PostgreSQLContainer<?> DATABASE =
             new PostgreSQLContainer<>("postgres:15.2-alpine");
-
-    @DynamicPropertySource
-    static void configureProperties(DynamicPropertyRegistry registry) {
-        registry.add("spring.datasource.url", DATABASE::getJdbcUrl);
-        registry.add("spring.datasource.username", DATABASE::getUsername);
-        registry.add("spring.datasource.password", DATABASE::getPassword);
-    }
-
     @Autowired
     private AccountPersistenceAdapter adapterUnderTest;
 
