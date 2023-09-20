@@ -5,9 +5,14 @@ import de.nikoconsulting.demo.hexagontransmon.app.domain.model.ActivityWindow;
 import de.nikoconsulting.demo.hexagontransmon.app.domain.model.Money;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.jdbc.Sql;
+import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.time.LocalDateTime;
 
@@ -37,7 +42,14 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 @DataJpaTest
 @Import({AccountPersistenceAdapter.class, AccountMapper.class})
+@Testcontainers
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class AccountPersistenceAdapterTest {
+
+    @Container
+    @ServiceConnection
+    static PostgreSQLContainer<?> DATABASE =
+            new PostgreSQLContainer<>("postgres:15");
 
     @Autowired
     private AccountPersistenceAdapter adapterUnderTest;
