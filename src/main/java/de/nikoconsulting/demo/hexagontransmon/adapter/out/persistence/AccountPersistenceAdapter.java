@@ -14,7 +14,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Component
-class AccountPersistentAdapter implements LoadAccount, UpdateAccountState {
+class AccountPersistenceAdapter implements LoadAccount, UpdateAccountState {
 
 
     private final AccountRepository accountRepository;
