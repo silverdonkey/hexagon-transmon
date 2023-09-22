@@ -36,7 +36,6 @@ import static org.assertj.core.api.BDDAssertions.then;
 @Testcontainers
 @TestPropertySource(properties = {
         "spring.test.database.replace=none",
-        "spring.datasource.url=jdbc:tc:postgresql:15.2-alpine:///systtest_db",
         "spring.jpa.hibernate.ddl-auto=create"
 })
 public class SendMoneySystemTest {
