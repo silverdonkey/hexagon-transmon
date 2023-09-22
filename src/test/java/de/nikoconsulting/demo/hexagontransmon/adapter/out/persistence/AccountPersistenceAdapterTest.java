@@ -44,8 +44,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Import({AccountPersistenceAdapter.class, AccountMapper.class})
 @Testcontainers
 @TestPropertySource(properties = {
-        "spring.test.database.replace=none",
-        "spring.datasource.url=jdbc:tc:postgresql:15.2-alpine:///db",
+        "spring.test.database.replace=none", // turn-off the autoconfiguration of DataSource bean, which by default uses in-memory database
         "spring.jpa.hibernate.ddl-auto=create"
 })
 class AccountPersistenceAdapterTest {
