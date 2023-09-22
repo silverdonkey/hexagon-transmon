@@ -11,7 +11,6 @@ import org.springframework.test.context.TestPropertySource;
 		"spring.datasource.username=sa",
 		"spring.datasource.password=password",
 		"spring.jpa.database-platform=org.hibernate.dialect.H2Dialect",
-		"spring.jpa.hibernate.ddl-auto=create",
 		"spring.jpa.show-sql=true",
 		"spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect",
 		"spring.jpa.properties.hibernate.format_sql=true"
