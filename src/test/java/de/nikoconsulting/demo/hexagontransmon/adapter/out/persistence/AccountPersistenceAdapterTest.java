@@ -16,8 +16,8 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.time.LocalDateTime;
 
-import static de.nikoconsulting.demo.hexagontransmon.common.AccountTestData.defaultAccount;
-import static de.nikoconsulting.demo.hexagontransmon.common.ActivityTestData.defaultActivity;
+import static de.nikoconsulting.demo.hexagontransmon.app.domain.model.AccountTestData.defaultAccount;
+import static de.nikoconsulting.demo.hexagontransmon.app.domain.model.ActivityTestData.defaultActivity;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**

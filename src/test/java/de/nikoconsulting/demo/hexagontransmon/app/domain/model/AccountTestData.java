@@ -1,9 +1,6 @@
-package de.nikoconsulting.demo.hexagontransmon.common;
+package de.nikoconsulting.demo.hexagontransmon.app.domain.model;
 
-import de.nikoconsulting.demo.hexagontransmon.app.domain.model.Account;
 import de.nikoconsulting.demo.hexagontransmon.app.domain.model.Account.AccountId;
-import de.nikoconsulting.demo.hexagontransmon.app.domain.model.ActivityWindow;
-import de.nikoconsulting.demo.hexagontransmon.app.domain.model.Money;
 
 public class AccountTestData {
 

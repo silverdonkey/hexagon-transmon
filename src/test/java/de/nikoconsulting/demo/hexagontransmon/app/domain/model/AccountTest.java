@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import de.nikoconsulting.demo.hexagontransmon.app.domain.model.Account.AccountId;
 
-import static de.nikoconsulting.demo.hexagontransmon.common.AccountTestData.defaultAccount;
-import static de.nikoconsulting.demo.hexagontransmon.common.ActivityTestData.defaultActivity;
+import static de.nikoconsulting.demo.hexagontransmon.app.domain.model.AccountTestData.defaultAccount;
+import static de.nikoconsulting.demo.hexagontransmon.app.domain.model.ActivityTestData.defaultActivity;
 import static org.assertj.core.api.Assertions.*;
 
 

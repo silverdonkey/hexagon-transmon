@@ -1,4 +1,4 @@
-package de.nikoconsulting.demo.hexagontransmon.common;
+package de.nikoconsulting.demo.hexagontransmon.app.domain.model;
 
 import de.nikoconsulting.demo.hexagontransmon.app.domain.model.Activity;
 import de.nikoconsulting.demo.hexagontransmon.app.domain.model.Activity.ActivityId;
