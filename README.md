@@ -10,6 +10,8 @@ Hexagonal Architecture does not help us to manage finer-grained boundaries withi
 * Organizing Code - create a package structure that expresses Hexagonal Architecture: entities, use cases, ports and adapters
 * Implementing main Architecture Elements - Use Case, Web Adapter, Persistence Adapter
 * Testing architecture elements - Implementing Unit, Integration and System tests
+  * Using Testcontainers for real (not in-memory) DB Integration tests and local development
+  * Using Docker-Compose for local development
 * Enforcing Architecture Boundaries (and thus managing dependencies)
   * Keeping package structure in mind and use package-private visibility when possible 
   * Within a single build module - Using ArchUnit
