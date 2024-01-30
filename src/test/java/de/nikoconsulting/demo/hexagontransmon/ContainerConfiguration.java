@@ -24,7 +24,7 @@ public class ContainerConfiguration {
     public PostgreSQLContainer<?> postgreSQLContainer() {
         int containerPort = 5432 ;
         int localPort = 5432 ;
-        PostgreSQLContainer postgres = new PostgreSQLContainer<>("postgres:15.2-alpine")
+        PostgreSQLContainer postgres = new PostgreSQLContainer<>("postgres:15.5-alpine")
                 .withDatabaseName("testcontainer_db")
                 .withUsername("postgres")
                 .withPassword("postgres")
