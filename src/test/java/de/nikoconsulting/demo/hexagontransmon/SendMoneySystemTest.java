@@ -43,7 +43,7 @@ public class SendMoneySystemTest {
     @Container
     @ServiceConnection
     static PostgreSQLContainer<?> DATABASE =
-            new PostgreSQLContainer<>("postgres:15.2-alpine");
+            new PostgreSQLContainer<>("postgres:16.2-alpine");
 
     @Autowired
     private TestRestTemplate restTemplate;
